@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Actionitem Test Suite" verbose="1">
+
+    <!--parameter name="baseURI" value="https://flowsoft-att-backend-dev-c9fb49414d00.herokuapp.com/api/v1" /-->
+
+    <test name="Actionitem CRUD Tests">
+        <classes>
+            <class name="com.flowsoft.actiontrackercrudtests.ActiontrackerCRUDTests"/>
+        </classes>
+    </test>
+
+<!--    <test name="Actionitem Negative Tests">
+        <classes>
+            <class name="com.flowsoft.actionitemnegativetests.ActionitrackerNegativeTests"/>
+        </classes>
+    </test>-->
+
+</suite>
