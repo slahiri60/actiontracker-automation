@@ -8,10 +8,4 @@
         </classes>
     </test>
 
-<!--    <test name="Actionitem Negative Tests">
-        <classes>
-            <class name="com.flowsoft.actionitemnegativetests.ActionitrackerNegativeTests"/>
-        </classes>
-    </test>-->
-
 </suite>
