@@ -1,0 +1,26 @@
+name: ActionTracker API Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Run tests
+        run: mvn -DbaseURI="https://flowsoft-att-backend-dev-c9fb49414d00.herokuapp.com/api/v1" -DsuiteXmlFile="ActiontrackerTests.xml" clean test
