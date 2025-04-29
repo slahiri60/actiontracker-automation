@@ -24,9 +24,37 @@ public class ActiontrackerCRUDTests {
     }
 
     @Test(priority=1)
-    public void retrieveAllBootcamps() {
+    public void retrieveAllActionitems() {
         log.info("\n\n====================================================================================");
         log.info("*********************************************** TEST001 - Test to retrieve all Action Items ***********************************************");
         actionitemCRUDFunctions.getAllActionitems(actionitemParameters);
+    }
+
+    @Test(priority=2)
+    public void createNewActionitem() {
+        log.info("\n\n====================================================================================");
+        log.info("*********************************************** TEST002 - Test to create new Action Item ************************************************");
+        actionitemCRUDFunctions.createActionitem(actionitemParameters);
+    }
+
+    @Test(priority=3, dependsOnMethods = {"createNewActionitem"})
+    public void retrieveNewActionitem() {
+        log.info("\n\n====================================================================================");
+        log.info("*********************************************** TEST003 - Test to retrieve new Action Item ************************************************");
+        actionitemCRUDFunctions.getSingleActionitem(actionitemParameters);
+    }
+
+    @Test(priority=4, dependsOnMethods = {"createNewActionitem"})
+    public void updateNewActionitem() {
+        log.info("\n\n====================================================================================");
+        log.info("*********************************************** TEST004 - Test to update new Action Item ************************************************");
+        actionitemCRUDFunctions.updateSingleActionitem(actionitemParameters);
+    }
+
+    @Test(priority=5,dependsOnMethods = {"createNewActionitem"})
+    public void deleteNewActionitem() {
+        log.info("\n\n====================================================================================");
+        log.info("*********************************************** TEST004 - Test to update new Action Item ************************************************");
+        actionitemCRUDFunctions.deleteSingleActionitem(actionitemParameters);
     }
 }

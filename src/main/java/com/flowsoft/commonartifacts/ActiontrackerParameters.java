@@ -6,4 +6,6 @@ import lombok.Data;
 public class ActiontrackerParameters {
 
     private String baseURI;
+    private String actionitemId;
+    private int actionitemCount;
 }
