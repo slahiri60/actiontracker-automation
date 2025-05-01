@@ -40,6 +40,13 @@ public class ActiontrackerCRUDFunctions {
         String actionitemId = commonFunctions.returnStringValueInResponse(response, "data._id");
         log.info("Action Item created with ID: " + actionitemId);
         actionitemParameters.setActionitemId(actionitemId);
+        log.info("\n+++++++++++++++++++++++++++++++ Comparing Action Item parameters +++++++++++++++++++++++++++++++ ");
+        assertActionitemStringParameter(response, "Concert tickets", "data.summary", "Summary");
+        assertActionitemStringParameter(response, "Book tickets for upcoming concert", "data.description", "Description");
+        assertActionitemStringParameter(response, "high", "data.criticality[0]", "Criticality");
+        assertActionitemStringParameter(response, "important", "data.importance[0]", "Importance");
+        assertActionitemStringParameter(response, "2025-04-14T00:00:00.000Z", "data.dueDate", "Due Date");
+
     }
 
     public void getSingleActionitem(ActiontrackerParameters actionitemParameters) {

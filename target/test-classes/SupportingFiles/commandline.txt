@@ -1,0 +1,6 @@
+CD C:\Users\soumi\IdeaProjects\actiontracker_automation
+
+<!--parameter name="baseURI" value="https://flowsoft-att-backend-dev-c9fb49414d00.herokuapp.com/api/v1" /-->
+<parameter name="baseURI" value="https://flowsoft-att-backend-dev-c9fb49414d00.herokuapp.com/api/v1" />
+
+mvn -DbaseURI="https://flowsoft-att-backend-dev-c9fb49414d00.herokuapp.com/api/v1" -DsuiteXmlFile="ActiontrackerTests.xml" clean test
