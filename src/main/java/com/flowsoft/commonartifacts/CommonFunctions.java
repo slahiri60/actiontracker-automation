@@ -54,7 +54,6 @@ public class CommonFunctions {
                         .expect().statusCode(200)
                         .when()
                         .put("/actionitems/{actionitemId}");
-        response.body().prettyPeek();
         return response;
     }
 
